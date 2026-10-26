@@ -15,10 +15,12 @@ float pressureToMmHg(float pressure) {
 /* ============ Setup & begin ============ */
 
 bool GyverBME280::begin() {
+    Wire.begin();
     return begin(&Wire, DEFAULT_BME280_ADDRESS);
 }
 
 bool GyverBME280::begin(uint8_t address) {
+    Wire.begin();
     return begin(&Wire, address);
 }
 
