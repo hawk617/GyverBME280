@@ -18,6 +18,10 @@ bool GyverBME280::begin() {
     return begin(&Wire, DEFAULT_BME280_ADDRESS);
 }
 
+bool GyverBME280::begin(uint8_t address) {
+    return begin(&Wire, address);
+}
+
 bool GyverBME280::begin(TwoWire* wire, uint8_t address) {
     _i2c_address = address;
     _wire = wire;
